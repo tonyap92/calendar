@@ -82,7 +82,7 @@ const isActiveDay = (day) => {
       </AppPopap>
     </div>
 
-    <div class="mb-10 text-2xl text-center">Каждый день месяца будет открываться цитата дня.</div>
+    <div class="mb-10 text-2xl text-center">Every day of the month, the quote of the day will be opened.</div>
 
     <div class="mb-20 grid">
       <div class="justify-self-center">
