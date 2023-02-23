@@ -61,9 +61,6 @@ const dayInfo = computed(() => {
   return getArrayObjectsItemByDatePropValue(clickedDay.value, quotes);
 });
 
-const isInfoPopapVisibleClass = computed(() => {
-  return this.isInfoPopapVisible ? 'opacity-0' : '';
-});
 
 const handleDayClick = (day) => {
   isInfoPopapVisible.value = !isInfoPopapVisible.value;
