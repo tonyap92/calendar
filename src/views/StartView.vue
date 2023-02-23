@@ -61,6 +61,10 @@ const dayInfo = computed(() => {
   return getArrayObjectsItemByDatePropValue(clickedDay.value, quotes);
 });
 
+const isInfoPopapVisibleClass = computed(() => {
+  return this.isInfoPopapVisible ? 'opacity-0' : '';
+});
+
 const handleDayClick = (day) => {
   isInfoPopapVisible.value = !isInfoPopapVisible.value;
   clickedDay.value = day;
@@ -92,7 +96,10 @@ const isActiveDay = (day) => {
           </div>
         </div>
 
-        <div class="date grid grid-cols-7 gap-2 px-2 py-2 justify-items-center">
+        <div
+          class="date grid grid-cols-7 gap-2 px-2 py-2 justify-items-center"
+          :class="{ 'opacity-0': isInfoPopapVisible }"
+        >
           <div
             v-for="day in getQtyOfDayLastMonth"
             class="w-8 h-8 sm:w-12 sm:h-12 flex justify-center items-center text-gray-400"
@@ -138,5 +145,9 @@ const isActiveDay = (day) => {
 
 .date .disabled {
   opacity: 0.5;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 </style>
